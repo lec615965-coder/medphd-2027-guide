@@ -7,10 +7,25 @@ const escape = (value) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 
+const MIRROR_DATA_ORIGIN = "https://lec615965-coder.github.io/medphd-2027-guide/data";
+const PRIMARY_HOST = "medphd-2027-guide.loosemeerkat.chatgpt.site";
+
 const fetchJson = async (path) => {
-  const response = await fetch(path, { cache: "no-store" });
-  if (!response.ok) throw new Error(path + " unavailable");
-  return response.json();
+  const filename = path.split("/").at(-1);
+  const candidates = window.location.hostname === PRIMARY_HOST
+    ? [MIRROR_DATA_ORIGIN + "/" + filename, path]
+    : [path];
+  let lastError;
+  for (const target of candidates) {
+    try {
+      const response = await fetch(target, { cache: "no-store" });
+      if (!response.ok) throw new Error(target + " unavailable");
+      return response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError;
 };
 
 const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "" };
