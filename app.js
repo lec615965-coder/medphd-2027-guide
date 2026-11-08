@@ -143,6 +143,8 @@ async function boot() {
     const regions = [...new Set(sources.map((item) => item.region))].sort((a, b) => a.localeCompare(b, "zh-CN"));
     byId("region-filter").insertAdjacentHTML("beforeend", regions.map((item) => '<option value="' + escape(item) + '">' + escape(item) + '</option>').join(""));
     byId("source-count").textContent = sources.length;
+    byId("registry-school-count").textContent = sources.length;
+    byId("registry-entry-count").textContent = sources.length;
     byId("monitor-status").textContent = monitor.lastCheckedAt ? "上次检查 " + readableTime(monitor.lastCheckedAt) : "待首次核验";
     byId("freshness").textContent = monitor.lastCheckedAt ? "上次检查： " + readableTime(monitor.lastCheckedAt) : monitor.message;
     bindControls();
@@ -155,4 +157,3 @@ async function boot() {
 }
 
 boot();
-
