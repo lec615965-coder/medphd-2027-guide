@@ -1,0 +1,40 @@
+name: Sync mirror from primary site
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download current static files
+        shell: bash
+        run: |
+          set -euo pipefail
+          origin="https://medphd-2027-guide.loosemeerkat.chatgpt.site"
+          curl -fsSL --retry 3 "$origin/" -o index.html
+          curl -fsSL --retry 3 "$origin/app.js" -o app.js
+          curl -fsSL --retry 3 "$origin/styles.css" -o styles.css
+          mkdir -p data
+          curl -fsSL --retry 3 "$origin/data/sources.json" -o data/sources.json
+          curl -fsSL --retry 3 "$origin/data/notices.json" -o data/notices.json
+          curl -fsSL --retry 3 "$origin/data/monitor.json" -o data/monitor.json
+      - name: Commit changes when needed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html app.js styles.css data
+          if git diff --cached --quiet; then
+            echo "No mirror changes."
+            exit 0
+          fi
+          git commit -m "chore: sync primary site"
+          git push
