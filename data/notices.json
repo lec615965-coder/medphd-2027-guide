@@ -6,7 +6,10 @@
     "summary": "2027年申请-考核博士网报将于2026年11月10日10:00开放、12月10日10:00关闭；报名信息、缴费及材料上传均须在截止前完成。",
     "publishedAt": "2026-11-06",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "博士网上报名提示",
     "url": "https://graduate.pumc.edu.cn/zsw/info/1004/2305.htm"
   },
@@ -17,7 +20,9 @@
     "summary": "协和医班（博士）网报时间为2026年11月10日10:00至12月10日10:00；提示明确了院系、专业、方向及意向导师的填报选项。",
     "publishedAt": "2026-11-06",
     "degreeType": "专业博士",
-    "degreeTypes": ["专业博士"],
+    "degreeTypes": [
+      "专业博士"
+    ],
     "field": "协和医班网上报名提示",
     "url": "https://graduate.pumc.edu.cn/zsw/info/1004/2308.htm"
   },
@@ -28,7 +33,9 @@
     "summary": "网上报名及缴费时间为2026年11月10日至25日，申请材料须于12月1日前寄达；英语要求包括CET-4或CET-6达到425分等条件。",
     "publishedAt": "2026-11-06",
     "degreeType": "学术博士",
-    "degreeTypes": ["学术博士"],
+    "degreeTypes": [
+      "学术博士"
+    ],
     "field": "基础医学申请-考核",
     "url": "https://medicine.jlu.edu.cn/info/1022/8471.htm"
   },
@@ -39,7 +46,10 @@
     "summary": "实施方案公布护理学院资格评审与综合考核规则，评审涵盖学术成果、学习成绩、英语水平、学术交流和综合素质，并对专业学位考生加强临床技能考核。",
     "publishedAt": "2026-11-06",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "护理学申请-考核",
     "url": "https://www.fjmu.edu.cn/hlxy/2026/1106/c8038a221244/page.htm"
   },
@@ -50,7 +60,9 @@
     "summary": "协和医班（博士）招收符合条件的非医学本科毕业生，专业代码 105100，计划 25 人；2026 年 11 月 10 日 10:00 至 12 月 10 日 10:00 网报。",
     "publishedAt": "2026-11-05",
     "degreeType": "专业博士",
-    "degreeTypes": ["专业博士"],
+    "degreeTypes": [
+      "专业博士"
+    ],
     "field": "临床医学申请-考核",
     "url": "https://graduate.pumc.edu.cn/zsw/info/1004/2303.htm"
   },
@@ -61,7 +73,10 @@
     "summary": "覆盖口腔医学学术和专业学位博士，网上报名截止2026年11月25日17:00；学院不设置第二批次报名。",
     "publishedAt": "2026-11-04",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "口腔医学申请-考核",
     "url": "https://www.whuss.com/article/13689"
   },
@@ -72,7 +87,10 @@
     "summary": "面向全日制学术、专业学位博士；网报为 2026 年 11 月 10 日 10:00 至 12 月 10 日 10:00，CET-6 须 ≥ 425。",
     "publishedAt": "2026-11-03",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://graduate.pumc.edu.cn/zsw/info/1004/2300.htm"
   },
@@ -83,7 +101,10 @@
     "summary": "申请-考核网报为 2026 年 10 月 26 日 09:00 至 12 月 25 日 17:00；学术与专业学位博士均有招生安排。",
     "publishedAt": "2026-10-20",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/d185d6a41b344c7b9f22e538c4cf086f.htm"
   },
@@ -94,7 +115,10 @@
     "summary": "汇总基础医学院、各临床医学院及其他招生单位的申请-考核细则；报考者须据此核对本单位附加条件、材料和考核安排。",
     "publishedAt": "2026-10-27",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "院系申请-考核细则",
     "url": "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/6ae01b5460df4a328824cb6eb57e8586.htm"
   },
@@ -105,7 +129,9 @@
     "summary": "基础医学院普通招考实行申请-考核；2026 年 11 月 1 日至 30 日开放第二个常规申请时段。",
     "publishedAt": "2026-06-30",
     "degreeType": "学术博士",
-    "degreeTypes": ["学术博士"],
+    "degreeTypes": [
+      "学术博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/7f884a26-228c-41d2-92ea-d447646dd364?yxsdm=501"
   },
@@ -116,7 +142,9 @@
     "summary": "面向满足临床经历、规培和执业条件的在职医师，2026 年 11 月 1 日 12:00 至 12 月 31 日 16:00 报名；录取为非全日制定向培养。",
     "publishedAt": "2026-10-30",
     "degreeType": "专业博士",
-    "degreeTypes": ["专业博士"],
+    "degreeTypes": [
+      "专业博士"
+    ],
     "field": "临床医学非全日制项目",
     "url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/a81f81ab-4e82-4848-96fb-cb6e515952d0"
   },
@@ -127,7 +155,10 @@
     "summary": "第一批报名为 2026 年 11 月 6 日 10:00 至 11 月 23 日 10:00；学术和专业学位博士目录同步发布。",
     "publishedAt": "2026-11-04",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://yjsh.ccmu.edu.cn/zsgz/bszs/13361bda670b40ce9234ea7ae77fd7af.htm"
   },
@@ -138,7 +169,9 @@
     "summary": "学院要求缴费成功的考生于2026年11月27日10:00前提交电子材料；CET-6须≥425或满足简章列明的其他英语条件，综合考核拟于2026年12月线下进行。",
     "publishedAt": "2026-11-06",
     "degreeType": "学术博士",
-    "degreeTypes": ["学术博士"],
+    "degreeTypes": [
+      "学术博士"
+    ],
     "field": "生物医学工程申请-考核",
     "url": "https://bes.ccmu.edu.cn/xwkb_42/a1960bfc726b406f812a4d518456659e.htm"
   },
@@ -149,7 +182,10 @@
     "summary": "首都医科大学已发布 2027 年少数民族骨干计划博士专项简章；报考资格、材料和专业安排以官方附件为准。",
     "publishedAt": "2026-11-04",
     "degreeType": "专项计划",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "少数民族骨干计划",
     "url": "https://yjsh.ccmu.edu.cn/zsgz/bszs/61097d7068ad4b2d985db21665ffe6e4.htm"
   },
@@ -160,7 +196,10 @@
     "summary": "医学部普通招考博士实行申请-考核，预计招收学术型 25 人、专业学位 110 人；网报为 11 月 4 日至 18 日。",
     "publishedAt": "2026-10-30",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://medgs.xjtu.edu.cn/info/1109/15893.htm"
   },
@@ -171,7 +210,10 @@
     "summary": "全日制学术与专业学位博士均实施申请-考核；申请-考核报名时间暂定于 2026 年 11 月上旬另行通知。",
     "publishedAt": "2026-10-13",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://yjszs.njmu.edu.cn/2026/1013/c10189a307820/page.htm"
   },
@@ -182,7 +224,10 @@
     "summary": "仅摘录普通招考（申请-考核）信息：第一批网报为 2026 年 10 月 20 日 09:00 至 11 月 20 日 20:00；原则上需有 1 篇已发表或录用的高质量学术论文。",
     "publishedAt": "2026-10-16",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "http://www.cmm.zju.edu.cn/2026/1016/c58749a3215424/pagem.htm"
   },
@@ -193,7 +238,10 @@
     "summary": "简章覆盖医学学科的申请-考核招生；校级网报及缴费时间为 2026 年 11 月 10 日至 25 日。",
     "publishedAt": "2026-10-30",
     "degreeType": "学术博士 · 专业博士",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "医学博士申请-考核",
     "url": "https://yzb.jlu.edu.cn/info/1051/3731.htm"
   },
@@ -204,7 +252,10 @@
     "summary": "已公示 2027 年博导资格拟推荐名单；这不是面向考生的报名通知或招生目录。",
     "publishedAt": "2026-10-09",
     "degreeType": "导师资格",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "导师招生资格（非报名通知）",
     "url": "https://jcyxy.csu.edu.cn/info/1035/7471.htm"
   },
@@ -215,7 +266,10 @@
     "summary": "中山医学院已发布博士研究生招生计划分配结果；该公告供导师阅知，不等同于考生报名通知。",
     "publishedAt": "2026-10-09",
     "degreeType": "导师计划",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "博士导师招生计划（非报名通知）",
     "url": "https://zssom.sysu.edu.cn/article/12296"
   },
@@ -226,7 +280,10 @@
     "summary": "已启动 2027 年博导招生资格认定；该流程面向导师及培养单位，不是考生报名通知。",
     "publishedAt": "2026-05-18",
     "degreeType": "导师资格",
-    "degreeTypes": ["学术博士", "专业博士"],
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
     "field": "导师招生资格（非报名通知）",
     "url": "https://qlyxjxgl.sdu.edu.cn/info/1979/16491.htm"
   },
@@ -237,9 +294,10 @@
     "summary": "基础医学院已启动 2027 年博导上岗招生申请；此为导师端资格安排，不是考生报名通知。",
     "publishedAt": "2026-10-15",
     "degreeType": "导师资格",
-    "degreeTypes": ["学术博士"],
+    "degreeTypes": [
+      "学术博士"
+    ],
     "field": "导师招生资格（非报名通知）",
     "url": "https://jcyx.suda.edu.cn/ee/34/c14613a716340/page.htm"
   }
 ]
-
