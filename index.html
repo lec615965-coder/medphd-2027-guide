@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="2027 医学博士申请信息站：只收录官方来源，公开查询医学学博与专博招生信息。"
+    />
+    <meta name="theme-color" content="#12344d" />
+    <title>2027 医学博士申请信息站</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#query">跳到查询区</a>
+    <header class="masthead">
+      <a class="wordmark" href="#top" aria-label="返回首页">
+        <span class="wordmark-mark">MD</span>
+        <span class="wordmark-text">2027<br /><em>医学博士申请</em></span>
+      </a>
+      <nav class="top-nav" aria-label="页面导航">
+        <a href="#query">查询信息</a>
+        <a href="#sources">监测院校</a>
+        <a href="#method">更新说明</a>
+      </nav>
+      <span class="nav-stamp">公开 · 无需登录</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> OFFICIAL-SOURCE INDEX · 2027</p>
+          <h1 id="hero-title">申博信息，<br /><i>回到原始出处。</i></h1>
+          <p class="hero-intro">
+            面向医学学术博士与专业博士申请者的公开查询站。每条可展示的招生信息都应能回到院校官方原文；来源不清或核验失败，不进入信息流。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#query">开始查询 <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#method">查看收录规则</a>
+          </div>
+        </div>
+        <aside class="status-dial" aria-label="数据状态">
+          <div class="dial-ring">
+            <div class="dial-inner">
+              <strong id="source-count">30</strong>
+              <span>已登记<br />官方入口</span>
+            </div>
+          </div>
+          <div class="dial-foot">
+            <span class="pulse"></span>
+            <span id="monitor-status">初始化中</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="principles" aria-label="收录原则">
+        <p><b>01</b><span>只指向<br />官方原文</span></p>
+        <p><b>02</b><span>学博与专博<br />并列标注</span></p>
+        <p><b>03</b><span>每日检查<br />不盲目发布</span></p>
+      </section>
+
+      <section class="query-shell" id="query" aria-labelledby="query-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> SEARCH THE RECORD</p>
+            <h2 id="query-title">查询招生信息</h2>
+          </div>
+          <p class="section-note">可按院校、地区与学位类型缩小范围</p>
+        </div>
+        <form class="query-panel" id="query-form">
+          <label class="search-field">
+            <span class="field-label">关键词</span>
+            <input id="keyword" type="search" placeholder="例如：北医、临床医学、申请考核" autocomplete="off" />
+          </label>
+          <label>
+            <span class="field-label">院校 / 地区</span>
+            <select id="region-filter">
+              <option value="">全部地区</option>
+            </select>
+          </label>
+          <label>
+            <span class="field-label">学位类型</span>
+            <select id="degree-filter">
+              <option value="">全部类型</option>
+              <option value="学术博士">学术博士</option>
+              <option value="专业博士">专业博士</option>
+            </select>
+          </label>
+          <button class="reset-button" id="reset-button" type="reset">清除条件</button>
+        </form>
+
+        <div class="results-head">
+          <div>
+            <p class="result-kicker">已核验的信息流</p>
+            <p class="results-count" id="notice-count" aria-live="polite">加载中</p>
+          </div>
+          <span class="freshness" id="freshness">读取监测状态…</span>
+        </div>
+        <div class="notice-list" id="notice-list" aria-live="polite"></div>
+      </section>
+
+      <section class="sources-section" id="sources" aria-labelledby="sources-title">
+        <div class="section-heading sources-heading">
+          <div>
+            <p class="eyebrow"><span></span> SOURCE REGISTRY</p>
+            <h2 id="sources-title">30 所院校，30 个公开入口</h2>
+          </div>
+          <p class="section-note">点击学校名称，直接离开本站前往官方来源</p>
+        </div>
+        <div class="source-summary" id="source-summary"></div>
+        <div class="source-grid" id="source-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="method-section" id="method" aria-labelledby="method-title">
+        <div class="method-intro">
+          <p class="eyebrow"><span></span> HOW IT STAYS USEFUL</p>
+          <h2 id="method-title">不是信息搬运，<br />是可追溯的索引。</h2>
+          <p>
+            本站不替代院校招生办，不解释或改写招生规则。它把分散的官方页面放进一个可查、可回溯的检索界面。
+          </p>
+        </div>
+        <ol class="method-steps">
+          <li>
+            <span>登记</span>
+            <div><b>官方来源入表</b><p>仅登记院校研究生院、医学院或公开导师主页。</p></div>
+          </li>
+          <li>
+            <span>检查</span>
+            <div><b>每日比对变化</b><p>发现新链接或关键字段改变时，保留来源与检查记录。</p></div>
+          </li>
+          <li>
+            <span>发布</span>
+            <div><b>保留原文路径</b><p>信息页始终提供官方原链接；异常来源不自动进入公开结果。</p></div>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>2027 医学博士申请信息站</strong> · 公开查询，不收集访客个人信息。</p>
+      <p>招生政策与时间节点以院校官方最终通知为准。</p>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
+
