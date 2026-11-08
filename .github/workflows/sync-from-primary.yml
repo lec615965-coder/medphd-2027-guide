@@ -2,6 +2,12 @@ name: Scan official sources and publish changes
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/sources.json"
+      - "scripts/scan-official-sources.mjs"
+      - ".github/workflows/sync-from-primary.yml"
   schedule:
     - cron: "0 1 * * *"
 
