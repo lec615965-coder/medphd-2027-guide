@@ -30,6 +30,25 @@ const fetchJson = async (path) => {
 
 const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "" };
 
+// Prefer an institution's public mentor directory when one is available. Every
+// remaining card still exposes a mentor link, falling back to its registered
+// official source instead of directing visitors to an unverified third party.
+const MENTOR_DIRECTORIES = {
+  ccmu: "https://yjsh.ccmu.edu.cn/dsdw/dsjj/bsyjsds/index.htm",
+  shsmu: "http://daoshi.shsmu.edu.cn/Pages/IntroductionHome.aspx",
+  "csu-xy": "https://faculty.csu.edu.cn/er_teacher_list.jsp?id=1040&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1002",
+  "xjtu-med": "https://medgs.xjtu.edu.cn/dsjj1/xsxwbszdjs.htm"
+};
+
+function mentorLink(source) {
+  const directUrl = source.mentorUrl || MENTOR_DIRECTORIES[source.id];
+  const href = directUrl || source.url;
+  const note = directUrl
+    ? "打开官方导师介绍"
+    : "该校尚未单列公开导师库，打开已登记官方入口";
+  return '<a class="mentor-link" href="' + escape(href) + '" target="_blank" rel="noopener noreferrer" title="' + escape(note) + '">导师介绍</a>';
+}
+
 function readableTime(value) {
   if (!value) return "首次核验尚未完成";
   const date = new Date(value);
@@ -92,7 +111,8 @@ function renderSources() {
         + '<div class="source-card-top"><span>' + escape(source.region) + '</span><span>' + escape(source.status) + '</span></div>'
         + '<h3>' + escape(source.name) + '</h3>'
         + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
-        + '<a href="' + escape(source.url) + '" target="_blank" rel="noopener noreferrer">前往官方入口</a>'
+        + '<div class="source-card-actions">' + mentorLink(source)
+        + '<a href="' + escape(source.url) + '" target="_blank" rel="noopener noreferrer">前往官方入口</a></div>'
         + '</article>';
     }
     const entryLinks = source.featured.links.map((link) => '<a class="entry-link" href="' + escape(link.url) + '" target="_blank" rel="noopener noreferrer">'
@@ -103,7 +123,8 @@ function renderSources() {
       + '<div class="source-card-top"><span>' + escape(source.region) + ' · ' + escape(source.sourceType) + '</span><span>' + escape(source.status) + '</span></div>'
       + '<div class="featured-identity"><h3>' + escape(source.name) + '</h3>'
       + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
-      + '<a class="source-home-link" href="' + escape(source.url) + '" target="_blank" rel="noopener noreferrer">院校来源主页</a></div>'
+      + '<div class="source-card-actions">' + mentorLink(source)
+      + '<a class="source-home-link" href="' + escape(source.url) + '" target="_blank" rel="noopener noreferrer">院校来源主页</a></div></div>'
       + '<div class="entry-panel"><p class="entry-panel-label">' + escape(source.featured.entryHeading || "2027 年入口") + '</p>' + entryLinks + '</div>'
       + '<div class="source-detail-rows">' + detailRows + '</div>'
       + '<p class="source-scope">' + escape(source.featured.scope) + '</p>'
