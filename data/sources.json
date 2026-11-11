@@ -626,8 +626,8 @@
     "name": "天津医科大学",
     "shortName": "天医",
     "region": "天津",
-    "sourceType": "院校官网",
-    "url": "https://www.tmu.edu.cn/",
+    "sourceType": "研究生院",
+    "url": "https://gs.tmu.edu.cn/2026/1110/c3145a90926/page.htm",
     "degreeTypes": [
       "学术博士",
       "专业博士"
@@ -635,7 +635,47 @@
     "fields": [
       "医学博士"
     ],
-    "status": "已登记"
+    "status": "2027 申请－考核已发布",
+    "mentorUrl": "https://gmsadm.tmu.edu.cn/dsfc/home",
+    "featured": {
+      "entryHeading": "2027 年申请－考核入口",
+      "scope": "以下仅展示天津医科大学 2027 年全日制“申请－考核”制博士信息，不展示本科直博或硕博连读。报考仅限招生目录中标有“申请－考核”的导师；学术与专业学位博士均以目录、导师计划和学院审核结果为准。",
+      "links": [
+        {
+          "type": "招生章程",
+          "label": "2027 年全日制博士招生章程",
+          "url": "https://gs.tmu.edu.cn/2026/1110/c3145a90926/page.htm"
+        },
+        {
+          "type": "招生目录",
+          "label": "2027 年专业及导师查询表",
+          "url": "https://gs.tmu.edu.cn/_upload/article/files/ef/27/b56cded64815ae6e5fa2cd5a3e03/affa89e6-a80f-4edf-b777-35b282b88d80.xlsx"
+        },
+        {
+          "type": "报名系统",
+          "label": "天津医科大学博士报名系统",
+          "url": "http://yzbm.tmu.edu.cn/"
+        }
+      ],
+      "requirements": [
+        {
+          "label": "报名时间",
+          "value": "首次网上报名及材料提交：2026 年 11 月 12 日至 11 月 19 日 17:00；退回修改或补充材料截止 11 月 27 日 11:00"
+        },
+        {
+          "label": "论文发表要求",
+          "value": "未设统一的论文发表数量门槛；如硕士期间已发表论文须上传扫描件，学院审核将综合学习成绩、研究实践、发表文章和获奖等择优确定入围考生"
+        },
+        {
+          "label": "四六级要求",
+          "value": "CET-6 ≥ 425；也认可 TEM-8 合格、TOEFL ≥ 90、GRE（新）≥ 305、IELTS ≥ 6 等章程列明条件"
+        },
+        {
+          "label": "专业学位材料",
+          "value": "临床或口腔医学专业学位博士还须按应届或往届身份提交医师资格与住院医师规范化培训相关证明；具体专业对应要求见招生章程附件"
+        }
+      ]
+    }
   },
   {
     "id": "cmu",
