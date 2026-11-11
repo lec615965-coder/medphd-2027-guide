@@ -1,5 +1,19 @@
 [
   {
+    "id": "tmu-2027-full-time-phd-application-assessment",
+    "sourceId": "tmu",
+    "title": "天津医科大学2027年全日制博士研究生招生章程",
+    "summary": "普通公开招考采用申请－考核制；首次网上报名及材料提交为2026年11月12日至19日17:00，报考导师须在招生目录中标有“申请－考核”。",
+    "publishedAt": "2026-11-10",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请－考核",
+    "url": "https://gs.tmu.edu.cn/2026/1110/c3145a90926/page.htm"
+  },
+  {
     "id": "auto-source-update-gzhmu",
     "sourceId": "gzhmu",
     "title": "广州医科大学官方招生来源检测到页面变化",
