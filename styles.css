@@ -128,6 +128,8 @@ input::placeholder { color: #9aa8ae; }
 .tag { padding: .22rem .38rem; border: 1px solid var(--line); color: var(--muted); font-size: .68rem; }
 .notice-link { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 50%; background: var(--ink); color: var(--white); text-decoration: none; font-size: 1.2rem; }
 .notice-link:hover { background: var(--teal); }
+.notice-toggle { display: block; width: fit-content; margin: 1rem auto 0; padding: .62rem .95rem; border: 1px solid var(--ink); background: var(--white); color: var(--ink); font: 700 .75rem var(--mono); letter-spacing: .04em; cursor: pointer; }
+.notice-toggle:hover { border-color: var(--teal); background: var(--teal-pale); color: var(--teal); }
 .empty-state { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }
 .empty-state b { display: block; margin-bottom: .35rem; font-family: var(--display); font-size: 1.45rem; }
 .empty-state p { max-width: 680px; margin: 0; color: var(--muted); }
@@ -138,7 +140,8 @@ input::placeholder { color: #9aa8ae; }
 .source-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); border-left: 1px solid var(--line); }
 .source-card { min-height: 170px; padding: 1.2rem; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
 .source-card:hover { background: var(--teal-pale); }
-.source-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; color: var(--muted); font: .65rem var(--mono); }
+.source-card-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .3rem .5rem; color: var(--muted); font: .65rem var(--mono); }
+.source-deadline { color: var(--teal); white-space: nowrap; }
 .source-card h3 { margin: .8rem 0 .4rem; font-size: 1.04rem; font-weight: 650; }
 .source-card p { margin: 0; color: var(--muted); font-size: .78rem; }
 .source-card a { display: inline-flex; align-items: center; gap: .35rem; width: fit-content; margin-top: auto; padding-top: .9rem; color: var(--teal); font-size: .8rem; font-weight: 650; text-decoration: none; }
