@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-11T07:25:52.964Z",
+  "updatedAt": "2026-11-12T07:53:33.086Z",
   "sources": {
     "pumch": {
-      "hash": "a900e9ae89919817074d0275648f16be9ad72dc534942b2004f93ee0595f978c",
+      "hash": "17fd3652695107fcc9c3c42dc8ada9b92529a6fa5f75edcc0604a95da5eebd8c",
       "title": "北京协和医学院-研究生招生网",
       "sourceUrl": "https://graduate.pumc.edu.cn/zsw/",
       "resolvedUrl": "https://graduate.pumc.edu.cn/zsw/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "unchanged"
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
+      "status": "changed"
     },
     "bjmu": {
       "hash": "7392dc5f9dde17cb4032be5824fdcba9d554cb49e2ab895c0940ee225c9f18f6",
       "title": "北京大学研究生院医学部分院",
       "sourceUrl": "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/",
       "resolvedUrl": "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "unchanged"
     },
     "tsinghua-med": {
@@ -25,7 +25,7 @@
       "title": "简章目录-清华研究生招生网",
       "sourceUrl": "https://yz.tsinghua.edu.cn/zsxx/bszs/jzml.htm",
       "resolvedUrl": "https://yz.tsinghua.edu.cn/zsxx/bszs/jzml.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-10T07:56:07.335Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -35,7 +35,7 @@
       "title": "复旦大学上海医学院",
       "sourceUrl": "https://shmc.fudan.edu.cn/",
       "resolvedUrl": "https://shmc.fudan.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -45,7 +45,7 @@
       "title": "招生工作-上海交通大学医学院研究生院网站",
       "sourceUrl": "https://www.shsmu.edu.cn/yjsy/zsgz1.htm",
       "resolvedUrl": "https://www.shsmu.edu.cn/yjsy/zsgz1.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -55,20 +55,20 @@
       "title": "浙江大学医学院2027年博士研究生招生简章",
       "sourceUrl": "http://www.cmm.zju.edu.cn/2026/1016/c58749a3215424/pagem.htm",
       "resolvedUrl": "http://www.cmm.zju.edu.cn/2026/1016/c58749a3215424/pagem.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "hust-tj": {
       "sourceUrl": "https://tjm.hust.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "whu-med": {
       "sourceUrl": "https://gs.whu.edu.cn/zsgz/bszs/a2027n.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
@@ -77,16 +77,17 @@
       "title": "研究生教育-湘雅基础医学院门户网站",
       "sourceUrl": "https://jcyxy.csu.edu.cn/yjsjy.htm",
       "resolvedUrl": "https://jcyxy.csu.edu.cn/yjsjy.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "unchanged"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "scu-wc": {
       "hash": "5b2fcaf6eb179b6b06cb5f6746764a0658b1d67f6f7cac71bf045256f8dafa92",
       "title": "官方来源页面",
       "sourceUrl": "https://wcums.scu.edu.cn/",
       "resolvedUrl": "https://wcums.scu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -96,17 +97,18 @@
       "title": "招生信息 | 中山医学院",
       "sourceUrl": "https://zssom.sysu.edu.cn/admission",
       "resolvedUrl": "https://zssom.sysu.edu.cn/admission",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "changed"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "xjtu-med": {
       "hash": "0a7cc6d905c68dec752f75aae5466fe2d20d6bd5eab9964e0f652bf9d7f50640",
       "title": "博士招生-人才培养处研究生教育",
       "sourceUrl": "https://medgs.xjtu.edu.cn/zs/bszs.htm",
       "resolvedUrl": "https://medgs.xjtu.edu.cn/zs/bszs.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "unchanged"
     },
     "ccmu": {
@@ -114,26 +116,28 @@
       "title": "首都医科大学研究生院",
       "sourceUrl": "https://yjsh.ccmu.edu.cn/zsgz/bszs/",
       "resolvedUrl": "https://yjsh.ccmu.edu.cn/zsgz/bszs/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "unchanged"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "smu": {
       "hash": "fc92d5740e335299143f6457a7f7ee58578c67510c1ca8c7db238393699936a7",
       "title": "南方医科大学",
       "sourceUrl": "https://www.smu.edu.cn/",
       "resolvedUrl": "https://www.smu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "changed"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "cqmu": {
-      "hash": "8ba556a9153f1585d3cbb7619e434f6ff809ec5c5bedf62b5c64edee7874baca",
+      "hash": "0845a789d20b8fc1b02473b070eb6c8a1cb4175bd12bed78c1af63c691479e10",
       "title": "重庆医科大学",
       "sourceUrl": "https://www.cqmu.edu.cn/",
       "resolvedUrl": "https://www.cqmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "changed"
     },
     "njmu": {
@@ -141,20 +145,20 @@
       "title": "招生简章",
       "sourceUrl": "https://yjszs.njmu.edu.cn/10189/list.htm",
       "resolvedUrl": "https://yjszs.njmu.edu.cn/10189/list.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "tmu": {
-      "sourceUrl": "https://www.tmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "sourceUrl": "https://gs.tmu.edu.cn/2026/1110/c3145a90926/page.htm",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "cmu": {
       "sourceUrl": "https://www.cmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
@@ -163,14 +167,14 @@
       "title": "哈尔滨医科大学",
       "sourceUrl": "https://www.hrbmu.edu.cn/",
       "resolvedUrl": "https://www.hrbmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "zzu-med": {
       "sourceUrl": "https://med.zzu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
@@ -179,7 +183,7 @@
       "title": "山东大学齐鲁医学院教学管理办公室/学科与发展规划办公室",
       "sourceUrl": "https://qlyxjxgl.sdu.edu.cn/",
       "resolvedUrl": "https://qlyxjxgl.sdu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -189,7 +193,7 @@
       "title": "吉林大学研究生招生信息网",
       "sourceUrl": "https://yzb.jlu.edu.cn/",
       "resolvedUrl": "https://yzb.jlu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -199,7 +203,7 @@
       "title": "基础医学院",
       "sourceUrl": "https://jcyx.suda.edu.cn/",
       "resolvedUrl": "https://jcyx.suda.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -209,7 +213,7 @@
       "title": "安徽医科大学",
       "sourceUrl": "https://www.ahmu.edu.cn/",
       "resolvedUrl": "https://www.ahmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -219,7 +223,7 @@
       "title": "温州医科大学",
       "sourceUrl": "https://www.wmu.edu.cn/",
       "resolvedUrl": "https://www.wmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-08T16:58:16.826Z",
       "status": "failed",
       "lastError": "fetch failed"
@@ -229,37 +233,39 @@
       "title": "广州医科大学",
       "sourceUrl": "https://www.gzhmu.edu.cn/",
       "resolvedUrl": "https://www.gzhmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "changed"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "xzhmu": {
       "hash": "ea09494b3dd79f7712e230242d6121389146cb4580f94b8fb494c57daf2073bc",
       "title": "徐州医科大学",
       "sourceUrl": "https://www.xzhmu.edu.cn/",
       "resolvedUrl": "https://www.xzhmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "changed"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "fjmu": {
       "sourceUrl": "https://www.fjmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "kmmu": {
-      "hash": "d61c2639b88983b16b8c206e4f229096489cf1585b416117b7b0740f58285b80",
+      "hash": "1f1267e9de1501f4c82c190800c6613a8797fbe3ed5024fbf394b3c7dd3b2b6d",
       "title": "昆明医科大学",
       "sourceUrl": "https://www.kmmu.edu.cn/",
       "resolvedUrl": "https://www.kmmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "changed"
     },
     "xjmu": {
       "sourceUrl": "https://www.xjmu.edu.cn/",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
@@ -268,8 +274,8 @@
       "title": "解放军医学院_院校信息_中国研究生招生信息网",
       "sourceUrl": "https://yz.chsi.com.cn/sch/listYzZyjs--schId-367823%2CcategoryId-692179215.dhtml",
       "resolvedUrl": "https://yz.chsi.com.cn/sch/listYzZyjs--schId-367823%2CcategoryId-692179215.dhtml",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "unchanged"
     },
     "afmu": {
@@ -277,37 +283,38 @@
       "title": "博士申请审核-空军军医大学研究生院",
       "sourceUrl": "https://www.fmmu.edu.cn/yjsy/zsjy/bssqsh.htm",
       "resolvedUrl": "https://www.fmmu.edu.cn/yjsy/zsjy/bssqsh.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "baseline"
+      "status": "failed",
+      "lastError": "fetch failed"
     },
     "nmmu": {
       "sourceUrl": "https://ao.smmu.edu.cn/yjszs/list2.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "amum": {
       "sourceUrl": "https://zs.tmmu.edu.cn/zsjy/ziye.aspx?id=24&master=y",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "tongji-med": {
       "sourceUrl": "https://med.tongji.edu.cn/yjsjx/zsxx1/bszs.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "ncu-jxmed": {
       "sourceUrl": "https://yjsy.ncu.edu.cn/zsgz/bszs.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "xmu-med": {
       "sourceUrl": "https://med.xmu.edu.cn/yjspy/sbszs.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
@@ -316,42 +323,46 @@
       "title": "招生信息",
       "sourceUrl": "https://med.nju.edu.cn/zsxx/list1.htm",
       "resolvedUrl": "https://med.nju.edu.cn/zsxx/list1.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "lastSuccessAt": "2026-11-11T07:25:52.964Z",
-      "status": "baseline"
-    },
-    "ucas-med": {
-      "sourceUrl": "https://admission.ucas.ac.cn/info/ZhaoshengDanweiDetail/9adf9e50-424b-44c8-b2dc-900ef9344373/8020022027",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
       "status": "failed",
       "lastError": "fetch failed"
+    },
+    "ucas-med": {
+      "hash": "ef89859101437db73cd710b84152067be465002e42627a333e2c442926f5316e",
+      "title": "招生单位- 中国科学院大学招生信息网",
+      "sourceUrl": "https://admission.ucas.ac.cn/info/ZhaoshengDanweiDetail/9adf9e50-424b-44c8-b2dc-900ef9344373/8020022027",
+      "resolvedUrl": "https://admission.ucas.ac.cn/info/ZhaoshengDanweiDetail/9adf9e50-424b-44c8-b2dc-900ef9344373/8020022027",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
+      "status": "baseline"
     },
     "ustc-med": {
       "hash": "e3c48ad7ad990dc3bc99f6dfed2359718683804a898b580a6ffcb06ba076993a",
       "title": "中国科学技术大学-研究生招生在线",
       "sourceUrl": "https://yz.ustc.edu.cn/column/new/2/179?num=2",
       "resolvedUrl": "https://yz.ustc.edu.cn/column/new/2/179?num=2",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
-      "lastSuccessAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
+      "lastSuccessAt": "2026-11-12T07:53:33.086Z",
       "status": "unchanged"
     },
     "tju-med": {
       "sourceUrl": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/t20261008_324747.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "nankai-med": {
       "sourceUrl": "https://medical.nankai.edu.cn/6633/list.htm",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
       "lastError": "fetch failed"
     },
     "lzu-med": {
       "sourceUrl": "https://yz.lzu.edu.cn/boshishengzhaosheng/boshijianzhang/2026/1104/339720.html",
-      "lastCheckedAt": "2026-11-11T07:25:52.964Z",
+      "lastCheckedAt": "2026-11-12T07:53:33.086Z",
       "status": "failed",
-      "lastError": "HTTP 412"
+      "lastError": "fetch failed"
     }
   }
 }
