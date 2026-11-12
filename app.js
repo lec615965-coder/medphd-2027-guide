@@ -28,7 +28,7 @@ const fetchJson = async (path) => {
   throw lastError;
 };
 
-const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "" };
+const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "", noticesExpanded: false };
 
 // Prefer an institution's public mentor directory when one is available. Every
 // remaining card still exposes a mentor link, falling back to its registered
@@ -81,15 +81,63 @@ function noticeMatches(notice) {
     && (!state.degree || degreeTypes.includes(state.degree));
 }
 
+function noticeDateValue(notice) {
+  return /^20\d{2}-\d{2}-\d{2}$/.test(notice.publishedAt || "") ? notice.publishedAt : "0000-00-00";
+}
+
+function registrationDeadline(source) {
+  const requirement = source.featured?.requirements?.find((item) => item.label === "报名时间");
+  if (!requirement?.value) return null;
+  const firstWindow = requirement.value.split(/[；;。]/)[0];
+  if (/(未发布|不是考生|导师资格|导师新增|导师上岗|上岗申请|另行通知)/.test(firstWindow)) return null;
+  const matches = [...firstWindow.matchAll(/(?:(20\d{2})\s*年\s*)?(\d{1,2})\s*月\s*(\d{1,2})\s*日(?:\s*(\d{1,2}):(\d{2}))?/g)];
+  if (!matches.length) return null;
+  let inferredYear = Number(matches[0][1] || 2026);
+  const parsed = matches.map((match) => {
+    if (match[1]) inferredYear = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const hour = Number(match[4] || 23);
+    const minute = Number(match[5] || 59);
+    return {
+      value: Date.UTC(inferredYear, month - 1, day, hour, minute),
+      label: month + " 月 " + day + " 日" + (match[4] ? " " + String(hour).padStart(2, "0") + ":" + String(minute).padStart(2, "0") : "")
+    };
+  });
+  return parsed.at(-1);
+}
+
+function compareSourcesByDeadline(left, right) {
+  const leftDeadline = registrationDeadline(left);
+  const rightDeadline = registrationDeadline(right);
+  const leftValue = leftDeadline?.value ?? Number.POSITIVE_INFINITY;
+  const rightValue = rightDeadline?.value ?? Number.POSITIVE_INFINITY;
+  if (leftValue !== rightValue) return leftValue - rightValue;
+  return left.name.localeCompare(right.name, "zh-CN");
+}
+
+function sourceHeader(source, includeType) {
+  const deadline = registrationDeadline(source);
+  const origin = includeType ? source.region + " · " + source.sourceType : source.region;
+  return '<div class="source-card-top"><span>' + escape(origin) + '</span><span>' + escape(source.status) + '</span>'
+    + (deadline ? '<span class="source-deadline">报名截至 ' + escape(deadline.label) + '</span>' : '') + '</div>';
+}
+
 function renderNotices() {
   const host = byId("notice-list");
-  const list = state.notices.filter(noticeMatches);
-  byId("notice-count").textContent = list.length ? "找到 " + list.length + " 条已核验信息" : "暂未找到已核验通知";
+  const toggle = byId("notice-toggle");
+  const list = state.notices.filter(noticeMatches).sort((left, right) => noticeDateValue(right).localeCompare(noticeDateValue(left)) || left.title.localeCompare(right.title, "zh-CN"));
+  const isCollapsible = list.length > 10;
+  const visibleList = state.noticesExpanded ? list : list.slice(0, 10);
+  byId("notice-count").textContent = list.length ? "找到 " + list.length + " 条已核验信息" + (isCollapsible && !state.noticesExpanded ? " · 显示前 10 条" : "") : "暂未找到已核验通知";
+  toggle.hidden = !isCollapsible;
+  toggle.setAttribute("aria-expanded", String(state.noticesExpanded));
+  toggle.textContent = state.noticesExpanded ? "收起通知" : "展开其余 " + (list.length - 10) + " 条通知";
   if (!list.length) {
     host.innerHTML = '<div class="empty-state"><b>信息流保持克制。</b><p>当前筛选范围内尚无带官方原文链接、可公开展示的 2027 招生通知。你仍可在下方“监测院校”中直达已登记的官方入口；首次定时核验完成后，符合规则的原文链接会出现在这里。</p></div>';
     return;
   }
-  host.innerHTML = list.map((notice) => {
+  host.innerHTML = visibleList.map((notice) => {
     const source = state.sources.find((item) => item.id === notice.sourceId);
     return '<article class="notice-row">'
       + '<div class="notice-meta">' + escape(source?.shortName || "官方来源") + '<br />' + escape(notice.publishedAt || "日期待核") + '</div>'
@@ -102,13 +150,14 @@ function renderNotices() {
 
 function renderSources() {
   const host = byId("source-grid");
-  const list = state.sources.filter(sourceMatches);
+  const list = state.sources.filter(sourceMatches).sort(compareSourcesByDeadline);
   const verifiedCount = state.sources.filter((item) => item.featured).length;
-  byId("source-summary").textContent = "当前显示 " + list.length + " / " + state.sources.length + " 个官方来源；其中 " + verifiedCount + " 所展示已核验的 2027 招生或导师资格信息，其余仅为监测入口。";
+  const datedCount = list.filter(registrationDeadline).length;
+  byId("source-summary").textContent = "当前显示 " + list.length + " / " + state.sources.length + " 个官方来源；其中 " + verifiedCount + " 所展示已核验的 2027 招生或导师资格信息。已按 " + datedCount + " 所院校的报名截止时间由早到晚排列；未发布考生截止日期或仅含导师资格信息的来源排在后面。";
   host.innerHTML = list.map((source) => {
     if (!source.featured) {
       return '<article class="source-card">'
-        + '<div class="source-card-top"><span>' + escape(source.region) + '</span><span>' + escape(source.status) + '</span></div>'
+        + sourceHeader(source, false)
         + '<h3>' + escape(source.name) + '</h3>'
         + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
         + '<div class="source-card-actions">' + mentorLink(source)
@@ -120,7 +169,7 @@ function renderSources() {
     const detailRows = source.featured.requirements.map((item) => '<div class="source-detail-row">'
       + '<span>' + escape(item.label) + '</span><p>' + escape(item.value) + '</p></div>').join("");
     return '<article class="source-card source-card-featured">'
-      + '<div class="source-card-top"><span>' + escape(source.region) + ' · ' + escape(source.sourceType) + '</span><span>' + escape(source.status) + '</span></div>'
+      + sourceHeader(source, true)
       + '<div class="featured-identity"><h3>' + escape(source.name) + '</h3>'
       + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
       + '<div class="source-card-actions">' + mentorLink(source)
@@ -143,12 +192,14 @@ function bindControls() {
   const keyword = byId("keyword");
   const region = byId("region-filter");
   const degree = byId("degree-filter");
-  keyword.addEventListener("input", () => { state.keyword = keyword.value; render(); });
-  region.addEventListener("change", () => { state.region = region.value; render(); });
-  degree.addEventListener("change", () => { state.degree = degree.value; render(); });
+  const resetNoticeCollapse = () => { state.noticesExpanded = false; };
+  byId("notice-toggle").addEventListener("click", () => { state.noticesExpanded = !state.noticesExpanded; renderNotices(); });
+  keyword.addEventListener("input", () => { state.keyword = keyword.value; resetNoticeCollapse(); render(); });
+  region.addEventListener("change", () => { state.region = region.value; resetNoticeCollapse(); render(); });
+  degree.addEventListener("change", () => { state.degree = degree.value; resetNoticeCollapse(); render(); });
   form.addEventListener("reset", () => {
     window.setTimeout(() => {
-      state.keyword = ""; state.region = ""; state.degree = ""; render();
+      state.keyword = ""; state.region = ""; state.degree = ""; resetNoticeCollapse(); render();
     }, 0);
   });
 }
