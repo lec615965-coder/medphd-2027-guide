@@ -1,5 +1,19 @@
 [
   {
+    "id": "nmmu-2027-application-assessment",
+    "sourceId": "nmmu",
+    "title": "海军军医大学2027年招收攻读博士学位研究生章程",
+    "summary": "军队（含文职）与无军籍地方普通招考均实行申请－考核。报名材料须于2026年12月15日前提交；2027年1月1日08:00至1月5日16:30完成博士网报确认。",
+    "publishedAt": "2026-11-12",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请－考核",
+    "url": "https://ao.smmu.edu.cn/2026/1030/c428a5043/page.htm"
+  },
+  {
     "id": "auto-source-update-suda-med",
     "sourceId": "suda-med",
     "title": "苏州大学苏州医学院官方招生来源检测到页面变化",
