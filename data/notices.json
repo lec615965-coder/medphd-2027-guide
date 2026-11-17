@@ -1,5 +1,33 @@
 [
   {
+    "id": "sysu-zssom-2027-application-assessment",
+    "sourceId": "sysu-zssom",
+    "title": "中山大学2027年博士研究生招生简章及专业目录",
+    "summary": "普通招考实行申请－考核程序；第一次网上报名为 2026 年 11 月 23 日 10:00 至 12 月 20 日 24:00。医学相关材料和附加条件以中山医学院及各培养单位简章为准。",
+    "publishedAt": "2026-11-16",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请－考核",
+    "url": "https://graduate.sysu.edu.cn/zsw/article/547"
+  },
+  {
+    "id": "tongji-med-2027-application-assessment",
+    "sourceId": "tongji-med",
+    "title": "同济大学2027年博士招生章程、目录及网报公告",
+    "summary": "普通招考采用申请－考核制；第一批秋季入学网报为 2026 年 11 月 17 日 08:00 至 12 月 23 日 17:00。医学院、口腔医学院实施办法仍在更新，以培养单位具体要求为准。",
+    "publishedAt": "2026-11-16",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请－考核",
+    "url": "https://yz.tongji.edu.cn/info/1011/4291.htm"
+  },
+  {
     "id": "auto-source-update-scu-wc",
     "sourceId": "scu-wc",
     "title": "四川大学华西医学中心官方招生来源检测到页面变化",
