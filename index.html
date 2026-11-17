@@ -98,6 +98,24 @@
         </div>
         <div class="notice-list" id="notice-list" aria-live="polite"></div>
         <button class="notice-toggle" id="notice-toggle" type="button" hidden aria-expanded="false" aria-controls="notice-list"></button>
+
+        <section class="deadline-ledger" aria-labelledby="deadline-ledger-title">
+          <div class="deadline-ledger-head">
+            <div>
+              <p class="result-kicker">NEXT DEADLINES</p>
+              <h3 id="deadline-ledger-title">近期报名截止</h3>
+            </div>
+            <p id="deadline-table-note">按北京时间读取中…</p>
+          </div>
+          <div class="deadline-table-wrap">
+            <table class="deadline-table">
+              <thead>
+                <tr><th scope="col">院校</th><th scope="col">报名截止（北京时间）</th><th scope="col">当前状态</th></tr>
+              </thead>
+              <tbody id="deadline-table-body"></tbody>
+            </table>
+          </div>
+        </section>
       </section>
 
       <section class="sources-section" id="sources" aria-labelledby="sources-title">
@@ -144,3 +162,4 @@
     <script type="module" src="./app.js"></script>
   </body>
 </html>
+
