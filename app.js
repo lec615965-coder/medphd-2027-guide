@@ -28,7 +28,8 @@ const fetchJson = async (path) => {
   throw lastError;
 };
 
-const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "", noticesExpanded: false };
+const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;
+const state = { sources: [], notices: [], monitor: {}, keyword: "", region: "", degree: "", expandedExpiredSources: new Set() };
 
 // Prefer an institution's public mentor directory when one is available. Every
 // remaining card still exposes a mentor link, falling back to its registered
@@ -100,11 +101,18 @@ function registrationDeadline(source) {
     const hour = Number(match[4] || 23);
     const minute = Number(match[5] || 59);
     return {
-      value: Date.UTC(inferredYear, month - 1, day, hour, minute),
-      label: month + " 月 " + day + " 日" + (match[4] ? " " + String(hour).padStart(2, "0") + ":" + String(minute).padStart(2, "0") : "")
+      // Date.UTC reads its arguments as UTC. The source times are Beijing time,
+      // so shift by UTC+8 before comparing them with the visitor's clock.
+      value: Date.UTC(inferredYear, month - 1, day, hour, minute) - BEIJING_OFFSET_MS,
+      label: inferredYear + " 年 " + month + " 月 " + day + " 日" + (match[4] ? " " + String(hour).padStart(2, "0") + ":" + String(minute).padStart(2, "0") : "")
     };
   });
   return parsed.at(-1);
+}
+
+function isRegistrationClosed(source) {
+  const deadline = registrationDeadline(source);
+  return Boolean(deadline && deadline.value < Date.now());
 }
 
 function compareSourcesByDeadline(left, right) {
@@ -116,25 +124,30 @@ function compareSourcesByDeadline(left, right) {
   return left.name.localeCompare(right.name, "zh-CN");
 }
 
-function sourceHeader(source, includeType) {
+function sourceHeader(source, includeType, isClosed = false) {
   const deadline = registrationDeadline(source);
   const origin = includeType ? source.region + " · " + source.sourceType : source.region;
   return '<div class="source-card-top"><span>' + escape(origin) + '</span><span>' + escape(source.status) + '</span>'
-    + (deadline ? '<span class="source-deadline">报名截至 ' + escape(deadline.label) + '</span>' : '') + '</div>';
+    + (deadline ? '<span class="source-deadline' + (isClosed ? ' is-closed' : '') + '">' + (isClosed ? '已截止（北京时间） ' : '报名截至 ') + escape(deadline.label) + '</span>' : '') + '</div>';
+}
+
+function isCharterNotice(notice) {
+  return /招生章程/.test([notice.title, notice.field].join(" "));
 }
 
 function renderNotices() {
   const host = byId("notice-list");
   const toggle = byId("notice-toggle");
-  const list = state.notices.filter(noticeMatches).sort((left, right) => noticeDateValue(right).localeCompare(noticeDateValue(left)) || left.title.localeCompare(right.title, "zh-CN"));
-  const isCollapsible = list.length > 10;
-  const visibleList = state.noticesExpanded ? list : list.slice(0, 10);
-  byId("notice-count").textContent = list.length ? "找到 " + list.length + " 条已核验信息" + (isCollapsible && !state.noticesExpanded ? " · 显示前 10 条" : "") : "暂未找到已核验通知";
-  toggle.hidden = !isCollapsible;
-  toggle.setAttribute("aria-expanded", String(state.noticesExpanded));
-  toggle.textContent = state.noticesExpanded ? "收起通知" : "展开其余 " + (list.length - 10) + " 条通知";
-  if (!list.length) {
-    host.innerHTML = '<div class="empty-state"><b>信息流保持克制。</b><p>当前筛选范围内尚无带官方原文链接、可公开展示的 2027 招生通知。你仍可在下方“监测院校”中直达已登记的官方入口；首次定时核验完成后，符合规则的原文链接会出现在这里。</p></div>';
+  const charters = state.notices.filter(noticeMatches).filter(isCharterNotice)
+    .sort((left, right) => noticeDateValue(right).localeCompare(noticeDateValue(left)) || left.title.localeCompare(right.title, "zh-CN"));
+  const visibleList = charters.slice(0, 2);
+  byId("notice-count").textContent = charters.length
+    ? "招生章程 · 最近 " + visibleList.length + " 条"
+    : "暂未找到招生章程";
+  toggle.hidden = true;
+  toggle.setAttribute("aria-expanded", "false");
+  if (!charters.length) {
+    host.innerHTML = '<div class="empty-state"><b>当前筛选范围暂无招生章程。</b><p>可调整查询条件，或在下方院校卡片中查看已登记的官方入口与报名时间。</p></div>';
     return;
   }
   host.innerHTML = visibleList.map((notice) => {
@@ -148,6 +161,26 @@ function renderNotices() {
   }).join("");
 }
 
+function renderDeadlineTable() {
+  const table = byId("deadline-table-body");
+  const note = byId("deadline-table-note");
+  const upcoming = state.sources.filter(sourceMatches)
+    .map((source) => ({ source, deadline: registrationDeadline(source) }))
+    .filter((item) => item.deadline && item.deadline.value >= Date.now())
+    .sort((left, right) => left.deadline.value - right.deadline.value || left.source.name.localeCompare(right.source.name, "zh-CN"))
+    .slice(0, 5);
+
+  note.textContent = upcoming.length
+    ? "按北京时间排列 · 仅列尚未截止的普通招考 / 申请－考核报名"
+    : "当前筛选范围内暂无尚未截止的已核验报名时间";
+  table.innerHTML = upcoming.length ? upcoming.map(({ source, deadline }) => '<tr>'
+    + '<td><a href="#source-' + escape(source.id) + '">' + escape(source.name) + '</a><span>' + escape(source.region) + '</span></td>'
+    + '<td><time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time></td>'
+    + '<td>' + escape(source.status) + '</td>'
+    + '</tr>').join("")
+    : '<tr><td class="deadline-empty" colspan="3">暂无可展示的近期报名截止时间。</td></tr>';
+}
+
 function renderSources() {
   const host = byId("source-grid");
   const list = state.sources.filter(sourceMatches).sort(compareSourcesByDeadline);
@@ -155,21 +188,32 @@ function renderSources() {
   const datedCount = list.filter(registrationDeadline).length;
   byId("source-summary").textContent = "当前显示 " + list.length + " / " + state.sources.length + " 个官方来源；其中 " + verifiedCount + " 所展示已核验的 2027 招生或导师资格信息。已按 " + datedCount + " 所院校的报名截止时间由早到晚排列；未发布考生截止日期或仅含导师资格信息的来源排在后面。";
   host.innerHTML = list.map((source) => {
+    const isClosed = isRegistrationClosed(source);
+    const isExpanded = state.expandedExpiredSources.has(source.id);
     if (!source.featured) {
-      return '<article class="source-card">'
-        + sourceHeader(source, false)
+      return '<article class="source-card" id="source-' + escape(source.id) + '">'
+        + sourceHeader(source, false, isClosed)
         + '<h3>' + escape(source.name) + '</h3>'
         + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
         + '<div class="source-card-actions">' + mentorLink(source)
         + '<a href="' + escape(source.url) + '" target="_blank" rel="noopener noreferrer">前往官方入口</a></div>'
         + '</article>';
     }
+    if (isClosed && !isExpanded) {
+      return '<article class="source-card source-card-featured source-card-expired" id="source-' + escape(source.id) + '">'
+        + sourceHeader(source, true, true)
+        + '<div class="expired-card-summary"><div><h3>' + escape(source.name) + '</h3>'
+        + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p></div>'
+        + '<div><p class="expired-card-note">该校普通招考报名已按北京时间截止；保留卡片供查阅官方原文。</p>'
+        + '<button class="source-expander" type="button" data-source-expander="' + escape(source.id) + '" aria-expanded="false">展开全部信息 <span aria-hidden="true">↓</span></button></div></div>'
+        + '</article>';
+    }
     const entryLinks = source.featured.links.map((link) => '<a class="entry-link" href="' + escape(link.url) + '" target="_blank" rel="noopener noreferrer">'
       + '<span>' + escape(link.type) + '</span><b>' + escape(link.label) + '</b><i>↗</i></a>').join("");
     const detailRows = source.featured.requirements.map((item) => '<div class="source-detail-row">'
       + '<span>' + escape(item.label) + '</span><p>' + escape(item.value) + '</p></div>').join("");
-    return '<article class="source-card source-card-featured">'
-      + sourceHeader(source, true)
+    return '<article class="source-card source-card-featured" id="source-' + escape(source.id) + '">'
+      + sourceHeader(source, true, isClosed)
       + '<div class="featured-identity"><h3>' + escape(source.name) + '</h3>'
       + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
       + '<div class="source-card-actions">' + mentorLink(source)
@@ -177,6 +221,7 @@ function renderSources() {
       + '<div class="entry-panel"><p class="entry-panel-label">' + escape(source.featured.entryHeading || "2027 年入口") + '</p>' + entryLinks + '</div>'
       + '<div class="source-detail-rows">' + detailRows + '</div>'
       + '<p class="source-scope">' + escape(source.featured.scope) + '</p>'
+      + (isClosed ? '<button class="source-expander source-expander-collapse" type="button" data-source-expander="' + escape(source.id) + '" aria-expanded="true">收起已截止信息 <span aria-hidden="true">↑</span></button>' : '')
       + '</article>';
   }).join("")
     || '<div class="empty-state"><b>没有匹配的来源。</b><p>尝试清除关键词或放宽地区、学位类型条件。</p></div>';
@@ -184,6 +229,7 @@ function renderSources() {
 
 function render() {
   renderNotices();
+  renderDeadlineTable();
   renderSources();
 }
 
@@ -192,14 +238,20 @@ function bindControls() {
   const keyword = byId("keyword");
   const region = byId("region-filter");
   const degree = byId("degree-filter");
-  const resetNoticeCollapse = () => { state.noticesExpanded = false; };
-  byId("notice-toggle").addEventListener("click", () => { state.noticesExpanded = !state.noticesExpanded; renderNotices(); });
-  keyword.addEventListener("input", () => { state.keyword = keyword.value; resetNoticeCollapse(); render(); });
-  region.addEventListener("change", () => { state.region = region.value; resetNoticeCollapse(); render(); });
-  degree.addEventListener("change", () => { state.degree = degree.value; resetNoticeCollapse(); render(); });
+  byId("source-grid").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-source-expander]");
+    if (!button) return;
+    const sourceId = button.dataset.sourceExpander;
+    if (state.expandedExpiredSources.has(sourceId)) state.expandedExpiredSources.delete(sourceId);
+    else state.expandedExpiredSources.add(sourceId);
+    renderSources();
+  });
+  keyword.addEventListener("input", () => { state.keyword = keyword.value; render(); });
+  region.addEventListener("change", () => { state.region = region.value; render(); });
+  degree.addEventListener("change", () => { state.degree = degree.value; render(); });
   form.addEventListener("reset", () => {
     window.setTimeout(() => {
-      state.keyword = ""; state.region = ""; state.degree = ""; resetNoticeCollapse(); render();
+      state.keyword = ""; state.region = ""; state.degree = ""; render();
     }, 0);
   });
 }
@@ -229,3 +281,4 @@ async function boot() {
 }
 
 boot();
+
