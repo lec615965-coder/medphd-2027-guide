@@ -164,21 +164,40 @@ function renderNotices() {
 function renderDeadlineTable() {
   const table = byId("deadline-table-body");
   const note = byId("deadline-table-note");
-  const upcoming = state.sources.filter(sourceMatches)
+  const now = Date.now();
+  const entries = state.sources.filter(sourceMatches)
     .map((source) => ({ source, deadline: registrationDeadline(source) }))
-    .filter((item) => item.deadline && item.deadline.value >= Date.now())
-    .sort((left, right) => left.deadline.value - right.deadline.value || left.source.name.localeCompare(right.source.name, "zh-CN"))
-    .slice(0, 5);
+    .sort((left, right) => {
+      // Start with the closest still-open deadline, then show the most recently
+      // closed ones, and leave schools without a published applicant deadline last.
+      const leftGroup = !left.deadline ? 2 : left.deadline.value >= now ? 0 : 1;
+      const rightGroup = !right.deadline ? 2 : right.deadline.value >= now ? 0 : 1;
+      if (leftGroup !== rightGroup) return leftGroup - rightGroup;
+      if (left.deadline && right.deadline && left.deadline.value !== right.deadline.value) {
+        return leftGroup === 1 ? right.deadline.value - left.deadline.value : left.deadline.value - right.deadline.value;
+      }
+      return left.source.name.localeCompare(right.source.name, "zh-CN");
+    });
+  const datedCount = entries.filter((item) => item.deadline).length;
 
-  note.textContent = upcoming.length
-    ? "按北京时间排列 · 仅列尚未截止的普通招考 / 申请－考核报名"
-    : "当前筛选范围内暂无尚未截止的已核验报名时间";
-  table.innerHTML = upcoming.length ? upcoming.map(({ source, deadline }) => '<tr>'
-    + '<td><a href="#source-' + escape(source.id) + '">' + escape(source.name) + '</a><span>' + escape(source.region) + '</span></td>'
-    + '<td><time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time></td>'
-    + '<td>' + escape(source.status) + '</td>'
-    + '</tr>').join("")
-    : '<tr><td class="deadline-empty" colspan="3">暂无可展示的近期报名截止时间。</td></tr>';
+  note.textContent = entries.length
+    ? "共 " + entries.length + " 所院校 · " + datedCount + " 所已核验考生报名截止时间 · 按北京时间由近及远排列"
+    : "当前筛选范围内暂无院校信息";
+  table.innerHTML = entries.length ? entries.map(({ source, deadline }, index) => {
+    const deadlineState = !deadline ? "pending" : deadline.value >= now ? "open" : "closed";
+    const statusLabel = deadlineState === "open" ? "进行中" : deadlineState === "closed" ? "已结束" : "待公布";
+    const isNearest = Boolean(deadline && index < 5);
+    const rowClass = "deadline-row is-" + deadlineState + (isNearest ? " is-nearest" : "");
+    const deadlineCell = deadline
+      ? '<time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time>'
+      : '<span class="deadline-unpublished">尚未发布考生报名截止时间</span>';
+    return '<tr class="' + rowClass + '">'
+      + '<td><a href="#source-' + escape(source.id) + '">' + escape(source.name) + '</a><span>' + escape(source.region) + '</span></td>'
+      + '<td>' + deadlineCell + '</td>'
+      + '<td><span class="deadline-status ' + deadlineState + '">' + statusLabel + '</span></td>'
+      + '</tr>';
+  }).join("")
+    : '<tr><td class="deadline-empty" colspan="3">暂无可展示的院校报名截止时间。</td></tr>';
 }
 
 function renderSources() {
