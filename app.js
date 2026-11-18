@@ -115,6 +115,22 @@ function isRegistrationClosed(source) {
   return Boolean(deadline && deadline.value < Date.now());
 }
 
+function materialSubmission(source) {
+  const material = source.featured?.materialSubmission;
+  if (material && typeof material === "object") {
+    return {
+      format: material.format || "官方未说明",
+      paperDeadline: material.paperDeadline || "未说明",
+      note: material.note || "以招生单位官方通知为准"
+    };
+  }
+  return {
+    format: source.featured ? "官方未说明" : "待公布",
+    paperDeadline: "—",
+    note: source.featured ? "以招生单位官方通知为准" : "尚未发布考生材料要求"
+  };
+}
+
 function compareSourcesByDeadline(left, right) {
   const leftDeadline = registrationDeadline(left);
   const rightDeadline = registrationDeadline(right);
@@ -188,16 +204,19 @@ function renderDeadlineTable() {
     const statusLabel = deadlineState === "open" ? "进行中" : deadlineState === "closed" ? "已结束" : "待公布";
     const isNearest = Boolean(deadline && index < 5);
     const rowClass = "deadline-row is-" + deadlineState + (isNearest ? " is-nearest" : "");
+    const material = materialSubmission(source);
     const deadlineCell = deadline
       ? '<time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time>'
       : '<span class="deadline-unpublished">尚未发布考生报名截止时间</span>';
     return '<tr class="' + rowClass + '">'
       + '<td><a href="#source-' + escape(source.id) + '">' + escape(source.name) + '</a><span>' + escape(source.region) + '</span></td>'
       + '<td>' + deadlineCell + '</td>'
+      + '<td class="deadline-material"><b>' + escape(material.format) + '</b><span>' + escape(material.note) + '</span></td>'
+      + '<td class="deadline-paper">' + escape(material.paperDeadline) + '</td>'
       + '<td><span class="deadline-status ' + deadlineState + '">' + statusLabel + '</span></td>'
       + '</tr>';
   }).join("")
-    : '<tr><td class="deadline-empty" colspan="3">暂无可展示的院校报名截止时间。</td></tr>';
+    : '<tr><td class="deadline-empty" colspan="5">暂无可展示的院校报名截止时间。</td></tr>';
 }
 
 function renderSources() {
