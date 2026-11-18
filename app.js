@@ -183,31 +183,28 @@ function renderDeadlineTable() {
   const now = Date.now();
   const entries = state.sources.filter(sourceMatches)
     .map((source) => ({ source, deadline: registrationDeadline(source) }))
+    .filter((item) => item.deadline)
     .sort((left, right) => {
-      // Start with the closest still-open deadline, then show the most recently
-      // closed ones, and leave schools without a published applicant deadline last.
-      const leftGroup = !left.deadline ? 2 : left.deadline.value >= now ? 0 : 1;
-      const rightGroup = !right.deadline ? 2 : right.deadline.value >= now ? 0 : 1;
+      // Show the closest still-open deadline first, followed by recently closed ones.
+      const leftGroup = left.deadline.value >= now ? 0 : 1;
+      const rightGroup = right.deadline.value >= now ? 0 : 1;
       if (leftGroup !== rightGroup) return leftGroup - rightGroup;
-      if (left.deadline && right.deadline && left.deadline.value !== right.deadline.value) {
+      if (left.deadline.value !== right.deadline.value) {
         return leftGroup === 1 ? right.deadline.value - left.deadline.value : left.deadline.value - right.deadline.value;
       }
       return left.source.name.localeCompare(right.source.name, "zh-CN");
     });
-  const datedCount = entries.filter((item) => item.deadline).length;
 
   note.textContent = entries.length
-    ? "共 " + entries.length + " 所院校 · " + datedCount + " 所已核验考生报名截止时间 · 按北京时间由近及远排列"
-    : "当前筛选范围内暂无院校信息";
+    ? "共 " + entries.length + " 所已公布考生报名截止时间 · 按北京时间由近及远排列"
+    : "当前筛选范围内暂无已公布的考生报名截止时间";
   table.innerHTML = entries.length ? entries.map(({ source, deadline }, index) => {
-    const deadlineState = !deadline ? "pending" : deadline.value >= now ? "open" : "closed";
-    const statusLabel = deadlineState === "open" ? "进行中" : deadlineState === "closed" ? "已结束" : "待公布";
-    const isNearest = Boolean(deadline && index < 5);
+    const deadlineState = deadline.value >= now ? "open" : "closed";
+    const statusLabel = deadlineState === "open" ? "进行中" : "已结束";
+    const isNearest = index < 5;
     const rowClass = "deadline-row is-" + deadlineState + (isNearest ? " is-nearest" : "");
     const material = materialSubmission(source);
-    const deadlineCell = deadline
-      ? '<time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time>'
-      : '<span class="deadline-unpublished">尚未发布考生报名截止时间</span>';
+    const deadlineCell = '<time datetime="' + escape(new Date(deadline.value).toISOString()) + '">' + escape(deadline.label) + '</time>';
     return '<tr class="' + rowClass + '">'
       + '<td><a href="#source-' + escape(source.id) + '">' + escape(source.name) + '</a><span>' + escape(source.region) + '</span></td>'
       + '<td>' + deadlineCell + '</td>'
