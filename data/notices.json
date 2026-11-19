@@ -1,5 +1,33 @@
 [
   {
+    "id": "scu-medfront-2027-ordinary-phd",
+    "sourceId": "scu-wc",
+    "title": "四川大学医学前沿科学中心2027年普通招考博士研究生招生简章",
+    "summary": "普通招考网上报名及缴费截至2026年12月10日22:00；电子材料于11月25日至12月15日上传，纸质原件拟录取后按通知寄送。",
+    "publishedAt": "2026-11-18",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学前沿申请－考核",
+    "url": "https://it.wchscu.cn/preview/285/412/8419"
+  },
+  {
+    "id": "scu-wch-2027-ordinary-phd",
+    "sourceId": "scu-wc",
+    "title": "四川大学华西临床医学院2027年普通招考博士研究生招生简章",
+    "summary": "普通招考网上报名及缴费截至2026年12月10日22:00；报名阶段电子材料于11月24日至12月15日上传。学博、专博论文及外语要求分别见学院原文。",
+    "publishedAt": "2026-11-18",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "华西临床医学申请－考核",
+    "url": "https://it.wchscu.cn/preview/285/412/8422"
+  },
+  {
     "id": "auto-source-update-nju-med",
     "sourceId": "nju-med",
     "title": "南京大学医学院官方招生来源检测到页面变化",
