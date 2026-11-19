@@ -272,7 +272,7 @@
     ],
     "status": "已登记"
   },
-    {
+  {
     "id": "whu-med",
     "name": "武汉大学医学部",
     "shortName": "武大医学部",
@@ -382,8 +382,9 @@
     "name": "四川大学华西医学中心",
     "shortName": "华西",
     "region": "四川",
-    "sourceType": "院校官网",
-    "url": "https://wcums.scu.edu.cn/",
+    "sourceType": "研究生招生网及华西院系官网",
+    "url": "https://yz.scu.edu.cn/",
+    "mentorUrl": "https://yjs.cd120.com/channels/353.html",
     "degreeTypes": [
       "学术博士",
       "专业博士"
@@ -391,7 +392,66 @@
     "fields": [
       "医学博士"
     ],
-    "status": "已登记"
+    "status": "2027 章程及华西院系普通招考细则已发布",
+    "featured": {
+      "entryHeading": "2027 年普通招考入口",
+      "scope": "四川大学 2027 年普通招考采用申请－考核制。此卡的论文、外语及电子材料细节来自华西临床医学院与医学前沿科学中心 2027 年简章；其他华西招生院系须分别核对本单位细则和专业目录，不含直博、硕博连读。",
+      "links": [
+        {
+          "type": "招生章程",
+          "label": "四川大学 2027 博士招生章程",
+          "url": "https://yz.scu.edu.cn/zsxx/Details/5e211015-7f53-4c99-8f20-12c117723a24"
+        },
+        {
+          "type": "院系细则",
+          "label": "华西临床医学院 2027 普通招考简章",
+          "url": "https://it.wchscu.cn/preview/285/412/8422"
+        },
+        {
+          "type": "院系细则",
+          "label": "医学前沿科学中心 2027 普通招考简章",
+          "url": "https://it.wchscu.cn/preview/285/412/8419"
+        },
+        {
+          "type": "招生目录",
+          "label": "四川大学博士专业目录及导师查询",
+          "url": "https://yz.scu.edu.cn/bszyml/"
+        },
+        {
+          "type": "报名系统",
+          "label": "研招网博士报名信息采集系统",
+          "url": "https://yz.chsi.com.cn/bsbm/"
+        },
+        {
+          "type": "材料系统",
+          "label": "华西临床／医学前沿电子材料系统",
+          "url": "https://stu.wchscu.cn/gsapp/sys/yjszsrzfwapp/bszs/user/login.do"
+        }
+      ],
+      "requirements": [
+        {
+          "label": "报名时间",
+          "value": "普通招考网上报名及缴费：2026 年 11 月 20 日 09:00—12 月 10 日 22:00"
+        },
+        {
+          "label": "论文发表要求",
+          "value": "华西临床：2024 年起见刊，学博须第一作者发表相关国际英文医学期刊论文 ≥1 篇；专博可为相关国际英文或国内重要医学期刊论文 ≥1 篇。医学前沿中心亦要求近 3 年相关第一作者论文，专项及共同第一作者认定见院系原文。"
+        },
+        {
+          "label": "英语要求",
+          "value": "华西临床：CET-4 ≥425，或 TOEFL ≥80、IELTS ≥5.5；医学前沿中心：CET-6 ≥425，或 TOEFL ≥80、IELTS ≥5.5 等，按各院系简章执行。"
+        },
+        {
+          "label": "材料提交",
+          "value": "华西临床报名阶段仅交电子版，2026 年 11 月 24 日—12 月 15 日上传；医学前沿中心 11 月 25 日—12 月 15 日上传。纸质原件保管至拟录取后按通知寄送，纸质截止时间尚未公布。"
+        }
+      ],
+      "materialSubmission": {
+        "format": "电子版（报名阶段）",
+        "paperDeadline": "拟录取后另行通知",
+        "note": "华西临床电子材料 12 月 15 日截止；医学前沿中心同日截止。纸质原件拟录取后按通知寄送；其他院系以各自细则为准。"
+      }
+    }
   },
   {
     "id": "sysu-zssom",
@@ -641,7 +701,7 @@
       ]
     }
   },
-    {
+  {
     "id": "tmu",
     "name": "天津医科大学",
     "shortName": "天医",
@@ -791,7 +851,7 @@
       ]
     }
   },
-    {
+  {
     "id": "jlu-bq",
     "name": "吉林大学白求恩医学部",
     "shortName": "白求恩医学部",
@@ -1082,7 +1142,7 @@
     ],
     "status": "已登记 · 军队与地方计划须分别核验"
   },
-    {
+  {
     "id": "nmmu",
     "name": "海军军医大学",
     "shortName": "海军军医大",
