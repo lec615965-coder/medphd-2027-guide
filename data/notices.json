@@ -1,5 +1,60 @@
 [
   {
+    "id": "lzu-basicmed-2027-application-assessment",
+    "sourceId": "lzu-med",
+    "title": "兰州大学基础医学院2027年博士研究生招生“申请-考核”实施方案",
+    "summary": "基础医学院普通招考首批网报截至2026年12月20日17:00；报名阶段在线提交电子材料。",
+    "publishedAt": "2026-11-11",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "基础医学及生物与医药申请-考核",
+    "url": "https://jchyxy.lzu.edu.cn/yanjiushengpeiyang/zhaoshengguanli/2026/1111/340084.html"
+  },
+  {
+    "id": "ncu-basicmed-2027-first-round",
+    "sourceId": "ncu-jxmed",
+    "title": "南昌大学基础医学院2027年第一批次博士研究生招生通知",
+    "summary": "基础医学院第一批网报截至2026年12月10日；纸质材料现场提交截至当日17:00，邮寄以当日邮戳为准。",
+    "publishedAt": "2026-11-12",
+    "degreeType": "学术博士",
+    "degreeTypes": [
+      "学术博士"
+    ],
+    "field": "基础医学申请-考核及导师计划",
+    "url": "https://sbms.ncu.edu.cn/tzgg/f53de03853b146a09b6050e400200b68.htm"
+  },
+  {
+    "id": "ncu-2027-doctoral-charter",
+    "sourceId": "ncu-jxmed",
+    "title": "南昌大学2027年博士研究生招生章程",
+    "summary": "校级章程公布博士申请-考核、普通招考条件及电子和纸质材料要求；具体截止时间见学院细则。",
+    "publishedAt": "2026-11-11",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士招生章程",
+    "url": "https://yjsy.ncu.edu.cn/info/1171/47956.htm"
+  },
+  {
+    "id": "shsmu-2027-doctoral-admissions",
+    "sourceId": "shsmu",
+    "title": "上海交通大学医学院2027年博士研究生招生简章",
+    "summary": "医学院已公布申请-考核报名时段、英语条件及电子材料要求；网报截至2026年12月15日17:00。",
+    "publishedAt": "2026-11-19",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请-考核",
+    "url": "https://www.shsmu.edu.cn/yjsy/info/1052/8210.htm"
+  },
+  {
     "id": "auto-source-update-tju-med",
     "sourceId": "tju-med",
     "title": "天津大学医学院官方招生来源检测到页面变化",
