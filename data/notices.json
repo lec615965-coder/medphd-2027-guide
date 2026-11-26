@@ -1,5 +1,103 @@
 [
   {
+    "id": "tongji-med-2027-application-assessment-rules",
+    "sourceId": "tongji-med",
+    "title": "医学院2027年“申请－考核”制博士生招生实施办法",
+    "summary": "同济大学医学院已发布2027年博士申请-考核院系办法，报考条件与材料要求应按原文核对。",
+    "publishedAt": "2026-11-24",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学院博士申请-考核",
+    "url": "https://med.tongji.edu.cn/info/1324/14453.htm"
+  },
+  {
+    "id": "njmu-2027-second-stage-application-assessment",
+    "sourceId": "njmu",
+    "title": "南京医科大学2027年全日制博士招生“申请－考核”制报考须知",
+    "summary": "第二阶段网报、上传材料及缴费为2026年11月27日10:00至12月18日10:00；附件公布可报考导师及专业目录。",
+    "publishedAt": "2026-11-23",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士申请-考核第二阶段",
+    "url": "https://yjszs.njmu.edu.cn/2026/1123/c10171a310029/page.htm"
+  },
+  {
+    "id": "nju-med-clinical-2027-application-assessment",
+    "sourceId": "nju-med",
+    "title": "医学院2027年临床医学、口腔医学博士研究生“申请-考核制”招生选拔实施细则",
+    "summary": "南京大学医学院发布临床医学、口腔医学博士申请-考核院系细则。",
+    "publishedAt": "2026-11-25",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "临床医学及口腔医学",
+    "url": "https://med.nju.edu.cn/f7/e9/c40983a849897/page.htm"
+  },
+  {
+    "id": "nju-med-basic-2027-application-assessment",
+    "sourceId": "nju-med",
+    "title": "医学院2027年基础医学、生物与医药博士研究生“申请-考核制”招生选拔实施细则",
+    "summary": "南京大学医学院发布基础医学、生物与医药博士申请-考核院系细则。",
+    "publishedAt": "2026-11-25",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "基础医学及生物与医药",
+    "url": "https://med.nju.edu.cn/f7/ea/c40983a849898/page.htm"
+  },
+  {
+    "id": "nju-2027-doctoral-online-registration",
+    "sourceId": "nju-med",
+    "title": "南京大学2027年报考博士研究生（普通招考类）网上报名须知",
+    "summary": "普通招考网报须知已发布；请同时查看医学院相应学科的申请-考核细则及材料要求。",
+    "publishedAt": "2026-11-25",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士普通招考网报",
+    "url": "https://yzb.nju.edu.cn/f7/98/c47865a849816/page.htm"
+  },
+  {
+    "id": "nju-2027-doctoral-catalog",
+    "sourceId": "nju-med",
+    "title": "南京大学2027年博士研究生招生目录",
+    "summary": "校级博士招生目录已发布；报考前核对医学院专业、导师及招生计划。",
+    "publishedAt": "2026-11-25",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士招生目录",
+    "url": "https://yzb.nju.edu.cn/f7/af/c47864a849839/page.htm"
+  },
+  {
+    "id": "nju-2027-doctoral-charter",
+    "sourceId": "nju-med",
+    "title": "南京大学2027年博士研究生招生章程",
+    "summary": "南京大学已发布2027年博士研究生招生章程；医学报考者须结合医学院各专业申请-考核细则。",
+    "publishedAt": "2026-11-25",
+    "degreeType": "学术博士 · 专业博士",
+    "degreeTypes": [
+      "学术博士",
+      "专业博士"
+    ],
+    "field": "医学博士招生章程",
+    "url": "https://yzb.nju.edu.cn/f7/95/c47864a849813/page.htm"
+  },
+  {
     "id": "auto-source-update-ccmu",
     "sourceId": "ccmu",
     "title": "首都医科大学官方招生来源检测到页面变化",
