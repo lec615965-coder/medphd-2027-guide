@@ -705,40 +705,50 @@
     "fields": [
       "医学博士"
     ],
-    "status": "2027 申请-考核已核验",
+    "status": "2027 第二阶段申请-考核报考须知已发布",
     "featured": {
-      "scope": "南京医科大学 2027 年全日制博士研究生招生简章与目录已发布，学术与专业学位博士均实施申请-考核；正式报名系统与具体时间仍以研招网后续通知为准。",
+      "scope": "南京医科大学 2027 年全日制博士普通招考实行申请-考核。第二阶段网报须知和可报导师目录已公布；部分导师计划已被校内选拔占满，报名前须核对第二阶段目录。",
       "links": [
         {
-          "type": "招生通知",
-          "label": "2027 全日制博士招生简章",
-          "url": "https://yjszs.njmu.edu.cn/_upload/article/files/d4/6b/d2a8bef34b5f871aa7d2448eb7ea/51317b08-05de-4a22-8169-3fff63c6c0bf.pdf"
+          "type": "招生简章",
+          "label": "2027 全日制博士招生简章及目录",
+          "url": "https://yjszs.njmu.edu.cn/2026/1013/c10189a307820/page.htm"
         },
         {
-          "type": "招生目录",
-          "label": "2027 全日制博士招生目录",
-          "url": "https://yjszs.njmu.edu.cn/_upload/article/files/d4/6b/d2a8bef34b5f871aa7d2448eb7ea/d7d37e4c-cf98-40a6-b2d7-a27cec1c6250.pdf"
+          "type": "报考须知",
+          "label": "2027 第二阶段申请-考核报考须知",
+          "url": "https://yjszs.njmu.edu.cn/2026/1123/c10171a310029/page.htm"
         },
         {
-          "type": "报名动态",
-          "label": "博士报名入口待学校公布",
-          "url": "https://yjszs.njmu.edu.cn/"
+          "type": "导师目录",
+          "label": "2027 第二阶段可报导师及专业目录",
+          "url": "https://yjszs.njmu.edu.cn/_upload/article/files/98/dd/0d5c42d1441aa340c00e7b6fed71/b26ffc1a-59c7-4656-9425-e0376e3b7f85.pdf"
+        },
+        {
+          "type": "报名系统",
+          "label": "2027 博士网报入口",
+          "url": "http://yzks.njmu.edu.cn:8080/logon"
         }
       ],
       "requirements": [
         {
           "label": "报名时间",
-          "value": "申请-考核：2026 年 11 月上旬另行通知"
+          "value": "第二阶段申请-考核：2026 年 11 月 27 日 10:00—12 月 18 日 10:00；网报、上传材料及缴费均须在截止前完成"
         },
         {
           "label": "论文发表要求",
-          "value": "简章未设统一论文发表门槛；第一作者英文国际期刊论文可作为英语水平证明之一"
+          "value": "科研成果证明材料（论文、专著、专利等）按个人情况作为附加材料上传；报考条件以招生简章及培养单位细则为准"
         },
         {
           "label": "四六级要求",
-          "value": "CET-6 通过或 ≥ 426；亦认可简章列明的其他英语成绩或医学博士外语统一考试"
+          "value": "需上传英语水平证明；校级简章认可 CET-6 通过或 ≥ 426 等条件，具体按简章核对"
         }
-      ]
+      ],
+      "materialSubmission": {
+        "format": "电子版；原件入学后提交",
+        "paperDeadline": "报考登记表及专家推荐信原件入学后交学院，未公布单独截止日",
+        "note": "报名材料扫描合成 PDF 上传；培养单位可能另有要求"
+      }
     }
   },
   {
@@ -1313,10 +1323,10 @@
     "fields": [
       "医学博士"
     ],
-    "status": "2027 章程、目录及网报已发布",
+    "status": "2027 医学院申请-考核实施办法已发布",
     "featured": {
       "entryHeading": "2027 年申请－考核入口",
-      "scope": "同济大学已发布 2027 年博士招生章程、博士专业目录和网报公告。医学院、口腔医学院的“申请-考核”制实施办法仍显示为更新中；本站仅列出已发布的校级普通招考信息，材料要求和具体截止节点须再以培养单位细则为准。",
+      "scope": "同济大学已发布 2027 年博士招生章程、专业目录和网报公告；医学院于 11 月 24 日发布申请-考核实施办法。医学报考条件及材料以医学院原文为准。",
       "links": [
         {
           "type": "招生章程",
@@ -1337,6 +1347,11 @@
           "type": "报名系统",
           "label": "2027 博士报考服务系统",
           "url": "https://yzbm.tongji.edu.cn/logon"
+        },
+        {
+          "type": "院系细则",
+          "label": "2027 医学院申请-考核实施办法",
+          "url": "https://med.tongji.edu.cn/info/1324/14453.htm"
         }
       ],
       "requirements": [
@@ -1350,7 +1365,7 @@
         },
         {
           "label": "四六级要求",
-          "value": "校级章程和网报公告未公布医学考生统一的四六级分数线；以医学院、口腔医学院 2027 年实施办法为准。"
+          "value": "医学院 2027 年实施办法已发布；英语要求请以院系细则原文核对。"
         }
       ]
     }
@@ -1477,8 +1492,8 @@
     "name": "南京大学医学院",
     "shortName": "南大医学院",
     "region": "江苏",
-    "sourceType": "医学院招生信息",
-    "url": "https://med.nju.edu.cn/zsxx/list1.htm",
+    "sourceType": "校研招网及医学院",
+    "url": "https://med.nju.edu.cn/zsxx/list.htm",
     "degreeTypes": [
       "学术博士",
       "专业博士"
@@ -1486,7 +1501,62 @@
     "fields": [
       "医学博士"
     ],
-    "status": "已登记 · 2027 普通招考待核验"
+    "status": "2027 普通招考及医学院细则已发布",
+    "mentorUrl": "https://med.nju.edu.cn/10880/list.htm",
+    "featured": {
+      "scope": "南京大学已发布 2027 年博士招生章程、目录和普通招考网报须知；医学院分别发布基础医学／生物与医药、临床医学／口腔医学申请-考核细则。材料寄送和分专业条件须按对应医学院细则核对。",
+      "links": [
+        {
+          "type": "招生章程",
+          "label": "2027 博士研究生招生章程",
+          "url": "https://yzb.nju.edu.cn/f7/95/c47864a849813/page.htm"
+        },
+        {
+          "type": "招生目录",
+          "label": "2027 博士研究生招生目录",
+          "url": "https://yzb.nju.edu.cn/f7/af/c47864a849839/page.htm"
+        },
+        {
+          "type": "网报须知",
+          "label": "2027 普通招考网上报名须知",
+          "url": "https://yzb.nju.edu.cn/f7/98/c47865a849816/page.htm"
+        },
+        {
+          "type": "院系细则",
+          "label": "2027 基础医学／生物与医药申请-考核",
+          "url": "https://med.nju.edu.cn/f7/ea/c40983a849898/page.htm"
+        },
+        {
+          "type": "院系细则",
+          "label": "2027 临床／口腔医学申请-考核",
+          "url": "https://med.nju.edu.cn/f7/e9/c40983a849897/page.htm"
+        },
+        {
+          "type": "报名系统",
+          "label": "2027 博士网报入口",
+          "url": "https://gs.nju.edu.cn/"
+        }
+      ],
+      "requirements": [
+        {
+          "label": "报名时间",
+          "value": "普通招考网上报名：2026 年 11 月 25 日—12 月 28 日 17:00；医学院材料要求及截止时间以对应细则为准"
+        },
+        {
+          "label": "论文发表要求",
+          "value": "按医学院对应申请-考核细则提交科研成果；暂不概括为全院统一发表门槛"
+        },
+        {
+          "label": "四六级要求",
+          "value": "按基础医学／生物与医药或临床／口腔医学对应细则核对，暂不概括为全院统一分数线"
+        }
+      ],
+      "materialSubmission": {
+        "format": "以医学院细则为准",
+        "paperDeadline": "院系纸质材料截止时间待核验",
+        "note": "先完成校级网报；院系提交方式以对应实施细则为准"
+      }
+    }
   },
   {
     "id": "ucas-med",
