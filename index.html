@@ -18,13 +18,19 @@
         <span class="wordmark-mark">MD</span>
         <span class="wordmark-text">2027<br /><em>医学博士申请</em></span>
       </a>
-      <nav class="top-nav" aria-label="页面导航">
-        <a href="#query">查询信息</a>
-        <a href="#sources">监测院校</a>
-        <a href="#method">更新说明</a>
-      </nav>
       <span class="nav-stamp">公开 · 无需登录</span>
     </header>
+
+    <nav class="quick-nav" aria-label="板块快捷导航">
+      <div class="quick-nav-inner">
+        <span class="quick-nav-label" aria-hidden="true">快速前往</span>
+        <a href="#query">查询筛选</a>
+        <a href="#notices">最新章程</a>
+        <a href="#deadlines">报名截止</a>
+        <a href="#sources">学校信息</a>
+        <a href="#method">收录说明</a>
+      </div>
+    </nav>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
@@ -89,7 +95,7 @@
           <button class="reset-button" id="reset-button" type="reset">清除条件</button>
         </form>
 
-        <div class="results-head">
+        <div class="results-head" id="notices">
           <div>
             <p class="result-kicker">已核验的信息流</p>
             <p class="results-count" id="notice-count" aria-live="polite">加载中</p>
@@ -99,7 +105,7 @@
         <div class="notice-list" id="notice-list" aria-live="polite"></div>
         <button class="notice-toggle" id="notice-toggle" type="button" hidden aria-expanded="false" aria-controls="notice-list"></button>
 
-        <section class="deadline-ledger" aria-labelledby="deadline-ledger-title">
+        <section class="deadline-ledger" id="deadlines" aria-labelledby="deadline-ledger-title">
           <div class="deadline-ledger-head">
             <div>
               <p class="result-kicker">ALL DEADLINES</p>
@@ -162,4 +168,3 @@
     <script type="module" src="./app.js"></script>
   </body>
 </html>
-
