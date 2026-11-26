@@ -131,7 +131,16 @@ function materialSubmission(source) {
   };
 }
 
+function has2027Update(source) {
+  const status = source.status || "";
+  if (/(待核验|待公布|已登记)/.test(status)) return false;
+  return /2027/.test(status) && (Boolean(source.featured) || /(已发布|已核验)/.test(status));
+}
+
 function compareSourcesByDeadline(left, right) {
+  const leftUpdated = has2027Update(left);
+  const rightUpdated = has2027Update(right);
+  if (leftUpdated !== rightUpdated) return leftUpdated ? -1 : 1;
   const leftDeadline = registrationDeadline(left);
   const rightDeadline = registrationDeadline(right);
   const leftValue = leftDeadline?.value ?? Number.POSITIVE_INFINITY;
@@ -219,14 +228,17 @@ function renderDeadlineTable() {
 function renderSources() {
   const host = byId("source-grid");
   const list = state.sources.filter(sourceMatches).sort(compareSourcesByDeadline);
-  const verifiedCount = state.sources.filter((item) => item.featured).length;
-  const datedCount = list.filter(registrationDeadline).length;
-  byId("source-summary").textContent = "当前显示 " + list.length + " / " + state.sources.length + " 个官方来源；其中 " + verifiedCount + " 所展示已核验的 2027 招生或导师资格信息。已按 " + datedCount + " 所院校的报名截止时间由早到晚排列；未发布考生截止日期或仅含导师资格信息的来源排在后面。";
-  host.innerHTML = list.map((source) => {
+  const updatedCount = list.filter(has2027Update).length;
+  const datedCount = list.filter((source) => has2027Update(source) && registrationDeadline(source)).length;
+  byId("source-summary").textContent = "当前显示 " + list.length + " / " + state.sources.length + " 所院校；其中 " + updatedCount + " 所已有 2027 招生或导师资格更新。已公布报名截止时间的 " + datedCount + " 所按截止日期排列，其后是其他已更新院校；尚无已核实更新的院校统一列在最后。";
+  host.innerHTML = list.map((source, index) => {
+    const groupHeading = index === updatedCount
+      ? '<div class="source-group-heading"><span>待更新院校</span><p>以下院校尚无已核实的 2027 招生或导师资格更新，请以官方入口为准。</p></div>'
+      : '';
     const isClosed = isRegistrationClosed(source);
     const isExpanded = state.expandedExpiredSources.has(source.id);
     if (!source.featured) {
-      return '<article class="source-card" id="source-' + escape(source.id) + '">'
+      return groupHeading + '<article class="source-card" id="source-' + escape(source.id) + '">'
         + sourceHeader(source, false, isClosed)
         + '<h3>' + escape(source.name) + '</h3>'
         + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
@@ -235,7 +247,7 @@ function renderSources() {
         + '</article>';
     }
     if (isClosed && !isExpanded) {
-      return '<article class="source-card source-card-featured source-card-expired" id="source-' + escape(source.id) + '">'
+      return groupHeading + '<article class="source-card source-card-featured source-card-expired" id="source-' + escape(source.id) + '">'
         + sourceHeader(source, true, true)
         + '<div class="expired-card-summary"><div><h3>' + escape(source.name) + '</h3>'
         + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p></div>'
@@ -247,7 +259,7 @@ function renderSources() {
       + '<span>' + escape(link.type) + '</span><b>' + escape(link.label) + '</b><i>↗</i></a>').join("");
     const detailRows = source.featured.requirements.map((item) => '<div class="source-detail-row">'
       + '<span>' + escape(item.label) + '</span><p>' + escape(item.value) + '</p></div>').join("");
-    return '<article class="source-card source-card-featured" id="source-' + escape(source.id) + '">'
+    return groupHeading + '<article class="source-card source-card-featured" id="source-' + escape(source.id) + '">'
       + sourceHeader(source, true, isClosed)
       + '<div class="featured-identity"><h3>' + escape(source.name) + '</h3>'
       + '<p>' + escape(source.degreeTypes.join(" · ")) + ' · ' + escape(source.sourceType) + '</p>'
@@ -316,4 +328,3 @@ async function boot() {
 }
 
 boot();
-
